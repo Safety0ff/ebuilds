@@ -52,6 +52,8 @@ src_unpack() {
 	use vanilla && return 0
 
 	[[ ${CHOST} == ${CTARGET} ]] && epatch "${FILESDIR}"/gcc-spec-env.patch
+
+	#upstream 53113
 	epatch "${FILESDIR}"/4.7.0/gcc-4.7.0-libitmavx.patch
 }
 
