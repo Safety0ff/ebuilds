@@ -53,6 +53,9 @@ src_unpack() {
 
 	[[ ${CHOST} == ${CTARGET} ]] && epatch "${FILESDIR}"/gcc-spec-env.patch
 	epatch "${FILESDIR}"/${PV}/gcc-${PV}-libitmavx.patch
+
+	#upstream 53679
+	epatch "${FILESDIR}"/${PV}/gcc-${PV}-libgo-runtime.diff
 }
 
 pkg_setup() {
